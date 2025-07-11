@@ -1,0 +1,5 @@
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: blue !important;
+}
