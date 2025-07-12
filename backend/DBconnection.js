@@ -1,12 +1,12 @@
-var mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/shop");
+var mongoose = require('mongoose');
 
+mongoose.connect("mongodb://127.0.0.1:27017/shop");
 
 var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error"));
-db.once("open", function () {
-  console.log("Connection successful");
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function () {
+  console.log('Connection successful');
 });
 
-module.exports = db;
+module.exports = db
