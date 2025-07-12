@@ -19,7 +19,7 @@ function AddMenu() {
     e.preventDefault();
 
    axios
-  .post("http://127.0.0.1:8008/route/menusave", form)
+  .post("http://127.0.0.1:8004/route/menuSave", form)
   .then((res) => {
     alert("Menu Saved");
     const newMenuId = res.data.data._id; 

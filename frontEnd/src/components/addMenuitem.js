@@ -21,7 +21,7 @@ function AddMenuitem() {
     e.preventDefault();
 
     axios
-      .post(`http://127.0.0.1:8008/route/addMenuitem/${_id}`, form) 
+      .post(`http://127.0.0.1:8004/route/addMenuitem/${_id}`, form) 
       .then((res) => {
         alert("Menu Item Saved");
         navigate("/menu"); 

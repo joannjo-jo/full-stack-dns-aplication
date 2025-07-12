@@ -7,6 +7,6 @@ var route = require("./route");
 app.use(bodyparser.json());
 app.use(cors());
 app.use("/route", route);
-var server = app.listen(8008, function () {
+var server = app.listen(8004, function () {
   console.log("done");
 });

@@ -8,7 +8,7 @@ function LandingPage() {
   const [menuitems, setMenuitems] = useState([]);
   const fetchAllMenu = () => {
     axios
-      .get("http://127.0.0.1:8008/route/menuAlldata")
+      .get("http://127.0.0.1:8004/route/menuAlldata")
       .then((res) => {
         if (res.data.allData) {
           setMenu(res.data.allData);
@@ -24,7 +24,7 @@ function LandingPage() {
 
   const handleMenuClick = (menuId) => {
     axios
-      .get(`http://127.0.0.1:8008/route/allMenuitem/${menuId}`)
+      .get(`http://127.0.0.1:8004/route/allMenuitem/${menuId}`)
       .then((res) => {
         setMenuitems(res.data);
       })
@@ -51,12 +51,12 @@ function LandingPage() {
         </p>
       </div>
 
-      <div className="button-bg text-center">
+      <div className="button-bg text-center " style={{ backgroundColor: "black" }}>
         <div className="buttons py-2">
           {menu.map((menu, index) => (
             <button
               key={index}
-              className="btn btn-outline-primary me-3 px-4"
+              className="btn btn-outline-primary me-3 px-4 mb-1"
               onClick={() => handleMenuClick(menu._id)}
             >
               {menu.name}
@@ -67,10 +67,10 @@ function LandingPage() {
 
       <div className="menu-main bg-dark p-3">
         <div className="row m-4">
-          <div className="card text-center p-3 border-light bg-dark text-light shadow-sm h-100 col-md-12 mb-3">
+          <div className="card text-center p-3 border-light bg-dark text-light shadow-sm h-100 col-md-12 mb-3 ">
             {menuitems.length > 0 ? (
               menuitems.map((menuitem, index) => (
-                <div key={index} className=" col-md-4 ">
+                <div key={index} className=" col-md-12 mb-2 ">
                   <div className="card text-center border-light bg-dark text-light ">
                     <h5>{menuitem.name}</h5>
                     <p>{menuitem.description}</p>
@@ -86,8 +86,8 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="row m-4 d-flex">
-          <div className="col-md-4">
+        <div className="row m-4 d-flex mb-2">
+          <div className="col-md-4 mb-2">
             <div className="card text-center p-3 border-light bg-dark text-light shadow-sm h-100">
               <h6>CONNECT WITH US</h6>
               <p>+91 9567843340</p>
@@ -95,7 +95,7 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 mb-2">
             <div className="card text-center p-3 border-light bg-dark text-light shadow-sm h-100">
               <div className="text-center mb-1">
                 <img
@@ -111,7 +111,7 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 mb-2">
             <div className="card text-center p-3 border-light bg-dark text-light shadow-sm h-100">
               <h6>FIND US</h6>
               <p>

@@ -1,10 +1,10 @@
-const MenuItem = require("../models/menuitemSchema");
+const menuItem = require("../models/menuitemSchema");
 
 const addMenuItem = (req, res) => {
   const { _id } = req.params;
   const { name, description, price } = req.body;
 
-  const newItem = new MenuItem({
+  const newItem = new menuItem({
     name,
     description,
     price,
@@ -21,7 +21,7 @@ const addMenuItem = (req, res) => {
 const getAllMenuItems = (req, res) => {
   const { _id } = req.params;
 
-  MenuItem.find({ menuId: _id })
+  menuItem.find({ menuId: _id })
     .populate("menuId")
     .then((items) => res.json(items))
     .catch((err) => res.status(500).json({ error: err.message }));
